@@ -71,27 +71,18 @@ const Skills = () => {
                   </h3>
                 </div>
 
-                <div className="space-y-4">
+                <div className="flex flex-wrap gap-2">
                   {category.skills.map((skill, skillIndex) => (
-                    <div key={skillIndex}>
-                      <div className="flex justify-between items-center mb-2">
-                        <span className="text-gray-700 dark:text-gray-300 font-medium">
-                          {skill.name}
-                        </span>
-                        <span className="text-blue-600 dark:text-blue-400 font-semibold">
-                          {skill.level}%
-                        </span>
-                      </div>
-                      <div className="relative h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
-                        <motion.div
-                          className="absolute top-0 left-0 h-full bg-gradient-to-r from-blue-600 to-purple-600 rounded-full"
-                          initial={{ width: 0 }}
-                          whileInView={{ width: `${skill.level}%` }}
-                          viewport={{ once: true }}
-                          transition={{ duration: 1, delay: skillIndex * 0.1 }}
-                        />
-                      </div>
-                    </div>
+                    <motion.span
+                      key={skillIndex}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.3, delay: skillIndex * 0.05 }}
+                      whileHover={{ scale: 1.05 }}
+                      className="px-4 py-2 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-gray-800 dark:to-gray-700 text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium border border-blue-200 dark:border-gray-600 hover:border-blue-400 dark:hover:border-purple-500 transition-colors cursor-default">
+                      {skill}
+                    </motion.span>
                   ))}
                 </div>
               </motion.div>
@@ -107,9 +98,8 @@ const Skills = () => {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="mt-12 text-center">
           <p className="text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-            I'm constantly learning and expanding my skill set. Currently
-            exploring new technologies in cloud computing, DevOps, and modern
-            frameworks to stay at the forefront of web development.
+            I'm constantly learning and expanding my skill set to stay at the
+            forefront of development.
           </p>
         </motion.div>
       </div>

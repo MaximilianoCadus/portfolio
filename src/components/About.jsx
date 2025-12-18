@@ -65,16 +65,19 @@ const About = () => {
                 }}
               />
               <div className="relative bg-gray-200 dark:bg-gray-700 rounded-2xl overflow-hidden aspect-square">
-                {/* Placeholder for profile image */}
-                <div className="w-full h-full flex items-center justify-center text-gray-400 dark:text-gray-500">
+                <img
+                  src={about.image}
+                  alt="Profile"
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    e.target.style.display = 'none';
+                    e.target.nextSibling.style.display = 'flex';
+                  }}
+                />
+                {/* Fallback placeholder if image fails to load */}
+                <div className="w-full h-full flex items-center justify-center text-gray-400 dark:text-gray-500" style={{display: 'none'}}>
                   <Users size={120} />
                 </div>
-                {/* Uncomment when you have an image */}
-                {/* <img 
-                  src={about.image} 
-                  alt="Profile" 
-                  className="w-full h-full object-cover"
-                /> */}
               </div>
             </div>
           </motion.div>

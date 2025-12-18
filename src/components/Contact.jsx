@@ -119,11 +119,6 @@ const Contact = () => {
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
                 Get In Touch
               </h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-8">
-                Feel free to reach out through the contact form or connect with
-                me directly. I'm always excited to discuss new opportunities and
-                collaborations!
-              </p>
             </div>
 
             {/* Contact Methods */}
